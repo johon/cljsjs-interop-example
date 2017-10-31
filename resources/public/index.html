@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="https://clojurescript.org/images/cljs-logo-icon-32.png">
+  </head>
+  <body>
+    <div id="app">
+      <h2>Figwheel template</h2>
+      <p>Checkout your developer console.</p>
+    </div>
+    <script src="js/compiled/cljsjs_interop.js" type="text/javascript"></script>
+
+    <hr />
+
+    <h4>Call from JS to CLJS: Trigger a change in app-state</h4>
+    <script type="text/javascript">
+      function clickHandler() {
+        cljsjs_interop.core.set_heading_text(document.forms[0].elements["heading"].value);
+      }
+    </script>
+    <form>
+      <input type="text" name="heading" value="Hello World!"/>
+      <input type="button" onclick="clickHandler();" value="OK"/>
+    </form>
+  </body>
+</html>
